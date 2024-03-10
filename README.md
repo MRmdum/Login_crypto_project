@@ -8,6 +8,7 @@ To run just build and run with docker: <br />
 '''
 docker build -t image_name . <br />
 '''
+<br />
 '''
 docker run -it --name container_name image_name <br />
 '''
