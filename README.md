@@ -5,10 +5,10 @@ We used Google tink lib: https://github.com/tink-crypto/tink/blob/master/docs/PY
 and Bcrypt lib: https://github.com/pyca/bcrypt <br />
 <br />
 To run just build and run with docker: <br />
-'''
+```
 docker build -t image_name . <br />
-'''
-<br />
-'''
+```
+```
 docker run -it --name container_name image_name <br />
-'''
+```
+
