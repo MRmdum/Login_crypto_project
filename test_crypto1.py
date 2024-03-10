@@ -16,11 +16,10 @@ aead_primitive = keyset_handle.primitive(aead.Aead)
 conn = sqlite3.connect('user_pwd.db')
 c = conn.cursor()
 
-# Create table to store user data
 c.execute('''CREATE TABLE IF NOT EXISTS users
              (username TEXT PRIMARY KEY, password_hash TEXT, password_salt TEXT)''')
 
-# Function to hash password with bcrypt
+
 def hash_password(password):
     salt =  bcrypt.gensalt()
     hashed_password = bcrypt.hashpw(password.encode(),salt)
@@ -34,7 +33,6 @@ def decrypt_hash(ciphertext):
     plaintext = aead_primitive.decrypt(ciphertext=ciphertext, associated_data=b'')
     return plaintext.decode()
 
-# Function to register a new user
 def register(username, password):
     hashed_password,salt = hash_password(password)
 
@@ -42,7 +40,6 @@ def register(username, password):
     conn.commit()
     print("User registered successfully.")
 
-# Function to check login credentials
 def login(username, password):
     c.execute("SELECT * FROM users WHERE username=?", (username,))
     user = c.fetchone()
@@ -57,7 +54,6 @@ def login(username, password):
     else:
         print("User not found.")
 
-# Main function
 def main():
     while True:
         print("\n1. Register")
