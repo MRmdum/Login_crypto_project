@@ -1,4 +1,4 @@
-# Login for Student Cryptographique project
+# Login for student cryptographic project
 
 Just a simple login handling the passwords using hash+salt then aead encryption <br />
 We used Google tink lib: https://github.com/tink-crypto/tink/blob/master/docs/PYTHON-HOWTO.md <br />
