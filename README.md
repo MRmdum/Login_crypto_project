@@ -6,9 +6,9 @@ and Bcrypt lib: https://github.com/pyca/bcrypt <br />
 <br />
 To run just build and run with docker: <br />
 ```
-docker build -t image_name . <br />
+docker build -t image_name .
 ```
 ```
-docker run -it --name container_name image_name <br />
+docker run -it --name container_name image_name
 ```
 
